@@ -37,7 +37,7 @@ body {
 
 /* Banner image */
 .banner {
-  background-image: url("shymkent-park.jpg");
+  background-image: url("csci/shymkent-park.jpg");
   background-size: cover;
   height: 300px;
   display: flex;
@@ -63,7 +63,7 @@ nav {
   width: 100px;
   height: 100px;
   border-radius: 1000px;
-  background-image: url("round-circle-shape-logo-vector-14648843.jpg");
+  background-image: url("csci/round-circle-shape-logo-vector-14648843.jpg");
   background-size: cover;
 }
 
@@ -107,6 +107,9 @@ nav {
   float: right;
   margin-left: 20px;
   border-radius: 10px;
+  background-image: url("csci/round-circle-shape-logo-vector-14648843.jpg");
+  background-size: cover;
+  height: 300px;
 }
 
 #task p {
