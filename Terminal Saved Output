@@ -1,0 +1,133 @@
+Last login: Fri Jan 13 09:01:01 on ttys000
+MacBook-Pro-mac-2:~ mac$ cd sniffsniff/
+MacBook-Pro-mac-2:sniffsniff mac$ ls
+README.md
+MacBook-Pro-mac-2:sniffsniff mac$ cp ../Desktop/index.html .
+MacBook-Pro-mac-2:sniffsniff mac$ ls
+README.md	index.html
+MacBook-Pro-mac-2:sniffsniff mac$ git add 
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+MacBook-Pro-mac-2:sniffsniff mac$ git add -all
+error: did you mean `--all` (with two dashes ?)
+MacBook-Pro-mac-2:sniffsniff mac$ git add --all
+MacBook-Pro-mac-2:sniffsniff mac$ git commit -m "Simply did"
+[main b85f0f6] Simply did
+ 1 file changed, 10 insertions(+)
+ create mode 100644 index.html
+MacBook-Pro-mac-2:sniffsniff mac$ git push origin main
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/tastemir/sniffsniff.git/'
+MacBook-Pro-mac-2:sniffsniff mac$ git push origin main
+Username for 'https://github.com': tastemir
+Password for 'https://tastemir@github.com': 
+\fatal: unable to access 'https://github.com/tastemir/sniffsniff.git/': The requested URL returned error: 400
+MacBook-Pro-mac-2:sniffsniff mac$ git push origin main
+Username for 'https://github.com': tastemir
+Password for 'https://tastemir@github.com': 
+remote: Permission to tastemir/sniffsniff.git denied to tastemir.
+fatal: unable to access 'https://github.com/tastemir/sniffsniff.git/': The requested URL returned error: 403
+MacBook-Pro-mac-2:sniffsniff mac$ git push origin main
+Username for 'https://github.com': tastemir
+Password for 'https://tastemir@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/tastemir/sniffsniff.git/'
+MacBook-Pro-mac-2:sniffsniff mac$ git push origin main
+Username for 'https://github.com': tastemir
+Password for 'https://tastemir@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/tastemir/sniffsniff.git/'
+MacBook-Pro-mac-2:sniffsniff mac$ git push origin main
+Username for 'https://github.com': tastemir
+Password for 'https://tastemir@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/tastemir/sniffsniff.git/'
+MacBook-Pro-mac-2:sniffsniff mac$ git push origin main
+Username for 'https://github.com': tastemir
+Password for 'https://tastemir@github.com': 
+To https://github.com/tastemir/sniffsniff.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/tastemir/sniffsniff.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+MacBook-Pro-mac-2:sniffsniff mac$ git push --help
+
+
+
+       git push origin HEAD
+           A handy way to push the current branch to the same name on the remote.
+
+       git push mothership master:satellite/master dev:satellite/dev
+           Use the source ref that matches master (e.g.  refs/heads/master) to update the ref that matches satellite/master (most probably refs/remotes/satellite/master) in the
+           mothership repository; do the same for dev and satellite/dev.
+
+           This is to emulate git fetch run on the mothership using git push that is run in the opposite direction in order to integrate the work done on satellite, and is often
+           necessary when you can only make connection in one way (i.e. satellite can ssh into mothership but mothership cannot initiate connection to satellite because the latter is
+           behind a firewall or does not run sshd).
+
+           After running this git push on the satellite machine, you would ssh into the mothership and run git merge there to complete the emulation of git pull that were run on
+           mothership to pull changes made on satellite.
+
+       git push origin HEAD:master
+           Push the current branch to the remote ref matching master in the origin repository. This form is convenient to push the current branch without thinking about its local
+           name.
+
+       git push origin master:refs/heads/experimental
+           Create the branch experimental in the origin repository by copying the current master branch. This form is only needed to create a new branch or tag in the remote
+           repository when the local name and the remote name are different; otherwise, the ref name on its own will work.
+
+       git push origin :experimental
+           Find a ref that matches experimental in the origin repository (e.g.  refs/heads/experimental), and delete it.
+
+       git push origin +dev:master
+           Update the origin repository's master branch with the dev branch, allowing non-fast-forward updates.  This can leave unreferenced commits dangling in the origin repository.
+           Consider the following situation, where a fast-forward is not possible:
+
+                           o---o---o---A---B  origin/master
+                                    \
+                                     X---Y---Z  dev
+
+           The above command would change the origin repository to
+
+                                     A---B  (unnamed branch)
+                                    /
+                           o---o---o---X---Y---Z  master
+
+           Commits A and B would no longer belong to a branch with a symbolic name, and so would be unreachable. As such, these commits would be removed by a git gc command on the
+           origin repository.
+
+SECURITY
+       The fetch and push protocols are not designed to prevent one side from stealing data from the other repository that was not intended to be shared. If you have private data that
+       you need to protect from a malicious peer, your best option is to store it in another repository. This applies to both clients and servers. In particular, namespaces on a
+       server are not effective for read access control; you should only grant read access to a namespace to clients that you would trust with read access to the entire repository.
+
+       The known attack vectors are as follows:
+
+        1. The victim sends "have" lines advertising the IDs of objects it has that are not explicitly intended to be shared but can be used to optimize the transfer if the peer also
+           has them. The attacker chooses an object ID X to steal and sends a ref to X, but isn't required to send the content of X because the victim already has it. Now the victim
+           believes that the attacker has X, and it sends the content of X back to the attacker later. (This attack is most straightforward for a client to perform on a server, by
+           creating a ref to X in the namespace the client has access to and then fetching it. The most likely way for a server to perform it on a client is to "merge" X into a public
+           branch and hope that the user does additional work on this branch and pushes it back to the server without noticing the merge.)
+
+        2. As in #1, the attacker chooses an object ID X to steal. The victim sends an object Y that the attacker already has, and the attacker falsely claims to have X and not Y, so
+           the victim sends Y as a delta against X. The delta reveals regions of X that are similar to Y to the attacker.
+
+GIT
+       Part of the git(1) suite
+
+Git 2.17.0                                                                             04/02/2018                                                                           GIT-PUSH(1)
+(END) git
+git add –all
+git commit -m "Initial commit”
+git push -u origin main
+git push -u origin main
+Git
+
+
