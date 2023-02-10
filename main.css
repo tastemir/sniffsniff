@@ -11,24 +11,10 @@ header {
   text-align: center;
 }
 
-@media screen and (min-width: 768px) { 
-   header {
-      width: 100%;
-      background-color: lightblue;
-   }
-}
-
 .banner {
   color: green;
   font-size: 72px;
   text-shadow: 1px 1px #000000;
-}
-
-@media screen and (min-width: 768px) { 
-   .banner {
-      width: 100%;
-      background-color: lightblue;
-   }
 }
 
 /*Navbar*/
@@ -40,23 +26,10 @@ nav {
   height: 80px;
   padding: 0 20px;
 }
-@media screen and (min-width: 768px) { 
-   nav {
-      width: 100%;
-      background-color: lightblue;
-   }
-}
 
 .logo {
   display: flex;
   align-items: center;
-}
-
-@media screen and (min-width: 768px) { 
-   .logo {
-      width: 100%;
-      background-color: lightblue;
-   }
 }
 
 .logo img {
@@ -64,23 +37,9 @@ nav {
   overflow: hidden;
 }
 
-@media screen and (min-width: 768px) { 
-   .logo img {
-      width: 100%;
-      background-color: lightblue;
-   }
-}
-
 .menu {
   display: flex;
   justify-content: center;
-}
-
-@media screen and (min-width: 768px) { 
-   .menu {
-      width: 100%;
-      background-color: lightblue;
-   }
 }
 
 .menu a {
@@ -89,13 +48,6 @@ nav {
   text-decoration: none;
   margin: 0 10px;
   transition: all 0.3s;
-}
-
-@media screen and (min-width: 768px) { 
-   .menu a {
-      width: 100%;
-      background-color: lightblue;
-   }
 }
 
 .menu a:hover {
@@ -107,18 +59,6 @@ nav {
   font-weight: bold;
   border-bottom: 2px solid #333333;
 }
-
-@media screen and (min-width: 768px) { 
-   .menu a:hover {
-      width: 100%;
-      background-color: lightblue;
-   }
-   .menu a.active {
-      width: 100%;
-      background-color: lightblue;
-   }
-}
-
 
 /*Main Content*/
 .main_content {
@@ -163,6 +103,7 @@ article img {
   display: block;
   margin: 0 auto;
   box-shadow: 1px 1px #cccccc;
+  height:auto
 }
 
 article p {
@@ -225,6 +166,7 @@ article a:hover {
 
   article img {
     width: 100%;
+    height: auto
   }
 
   article p {
@@ -267,6 +209,59 @@ article a:hover {
       background-color: lightblue;
    }
 }
+@media screen and (min-width: 768px) { 
+   header {
+      width: 100%;
+      background-color: lightblue;
+   }
+}
+@media screen and (min-width: 768px) { 
+   .banner {
+      width: 100%;
+      background-color: lightblue;
+   }
+}
+@media screen and (min-width: 768px) { 
+   nav {
+      width: 100%;
+      background-color: lightblue;
+   }
+}
+@media screen and (min-width: 768px) { 
+   .logo img {
+      width: 100%;
+      background-color: lightblue;
+   }
+}
+@media screen and (min-width: 768px) { 
+   .logo {
+      width: 100%;
+      background-color: lightblue;
+   }
+}
+@media screen and (min-width: 768px) { 
+   .menu {
+      width: 100%;
+      background-color: lightblue;
+   }
+}
+@media screen and (min-width: 768px) { 
+   .menu a {
+      width: 100%;
+      background-color: lightblue;
+   }
+}
+@media screen and (min-width: 768px) { 
+   .menu a:hover {
+      width: 100%;
+      background-color: lightblue;
+   }
+   .menu a.active {
+      width: 100%;
+      background-color: lightblue;
+   }
+}
+
 body {
   margin: 0;
   padding: 0;
