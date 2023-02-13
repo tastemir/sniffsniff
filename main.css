@@ -18,13 +18,10 @@ header {
 }
 
 /*Navbar*/
-nav {
+nav{
+  display: grid;
+  grid-template-columns: 10% 90%;
   background-color: #cccccc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  padding: 0 20px;
 }
 
 .logo {
@@ -39,7 +36,9 @@ nav {
 
 .menu {
   display: flex;
-  justify-content: center;
+  gap: 4rem;
+  align-items: center;
+  overflow: auto;
 }
 
 .menu a {
@@ -125,3 +124,41 @@ article a:hover {
   border-bottom-color: #cccccc;
 }
 
+
+@media screen and (max-width: 1024px) {
+  .banner {
+    font-size: 60px;
+  }
+
+  .container_nav{
+    height: 50%;
+    justify-content: center;
+  }
+  .menu {
+    gap: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .logo-image {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .banner {
+    font-size: 40px;
+  }
+  nav{
+    grid-template-columns: 25% 75%;
+  }
+  .container_nav{
+    height: 100%;
+    padding-left: 0;
+  }
+  
+  .logo-image {
+    width: 200px;
+  }
+}
